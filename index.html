@@ -1,0 +1,963 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="H🔥T-HUB | Premium Digital Products">
+    <title>H🔥T-HUB | Premium Digital Products</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(circle at 20% 30%, #0a0a0a, #000000);
+            font-family: 'Segoe UI', 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+            color: #ffffff;
+            padding: 24px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 20px 30px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            width: 60%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #9C27B0, #ff55ff, #9C27B0, transparent);
+            border-radius: 100%;
+        }
+
+        .logo {
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0px;
+            margin-bottom: 15px;
+        }
+
+        .logo-text {
+            background: linear-gradient(135deg, #C084FC, #A855F7, #7C3AED, #C084FC);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 40px rgba(168, 85, 247, 0.4);
+            animation: textGlow 3s ease-in-out infinite alternate;
+        }
+
+        .logo-emoji {
+            display: inline-block;
+            font-size: 4rem;
+            animation: emojiFire 1.5s ease-in-out infinite alternate;
+            margin: 0 4px;
+            background: none !important;
+            -webkit-background-clip: unset !important;
+            background-clip: unset !important;
+            color: #ff5e00 !important;
+            text-shadow: 0 0 12px #ff4400, 0 0 25px #ff7700;
+            transform-origin: center;
+        }
+
+        @keyframes textGlow {
+            0% { text-shadow: 0 0 20px rgba(168, 85, 247, 0.3); }
+            100% { text-shadow: 0 0 50px rgba(168, 85, 247, 0.8); }
+        }
+
+        @keyframes emojiFire {
+            0% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 6px #ff6600); }
+            100% { transform: scale(1.1) rotate(3deg); filter: drop-shadow(0 0 22px #ff3300); }
+        }
+
+        .tagline {
+            color: #b0a0c0;
+            margin-top: 12px;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+
+        /* Search Bar Only */
+        .search-section {
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: rgba(20, 20, 30, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 60px;
+            padding: 5px 5px 5px 25px;
+            border: 1px solid rgba(156, 39, 176, 0.5);
+            width: 100%;
+            max-width: 550px;
+            transition: all 0.3s;
+        }
+
+        .search-box:focus-within {
+            border-color: #9C27B0;
+            box-shadow: 0 0 20px rgba(156, 39, 176, 0.3);
+        }
+
+        .search-box input {
+            background: transparent;
+            border: none;
+            color: white;
+            padding: 15px 12px;
+            font-size: 1rem;
+            width: 100%;
+            outline: none;
+        }
+
+        .search-box input::placeholder {
+            color: #888;
+            font-size: 0.95rem;
+        }
+
+        .search-box button {
+            background: linear-gradient(135deg, #9C27B0, #9f29b4);
+            border: none;
+            border-radius: 50px;
+            padding: 11px 32px;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .search-box button:hover {
+            transform: scale(1.02);
+            background: linear-gradient(135deg, #B341FF, #CE93D8);
+            box-shadow: 0 5px 15px rgba(156, 39, 176, 0.4);
+        }
+
+        /* Grid Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 28px;
+            margin-bottom: 60px;
+        }
+
+        /* Cards */
+        .card {
+            background: linear-gradient(145deg, #0e0e12, #08080a);
+            border: 2px solid #9C27B0;
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            position: relative;
+            animation: fadeInUp 0.5s ease backwards;
+            animation-delay: calc(var(--order, 0) * 0.02s);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.01);
+            border-color: #BA68C8;
+            box-shadow: 0 25px 40px rgba(156, 39, 176, 0.4);
+        }
+
+        .card-image-wrapper {
+            padding: 14px 14px 8px 14px;
+        }
+
+        .card-image {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1280 / 720;
+            object-fit: cover;
+            display: block;
+            border: 2px solid #9C27B0;
+            border-radius: 18px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .card:hover .card-image {
+            transform: scale(1.02);
+            border-color: #BA68C8;
+        }
+
+        .card-video-wrapper {
+            padding: 6px 14px 12px 14px;
+        }
+
+        .card-video {
+            width: 100%;
+            background: #000;
+            border: 2px solid #9C27B0;
+            border-radius: 18px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .card:hover .card-video {
+            border-color: #BA68C8;
+        }
+
+        .card-video video {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1280 / 720;
+            display: block;
+            border-radius: 14px;
+            background: #000;
+        }
+
+        .card-content {
+            padding: 16px 16px 22px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            text-align: center;
+            background: linear-gradient(135deg, #ffffff, #e2baff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .get-now-btn {
+            background: linear-gradient(135deg, #9C27B0, #B341E0);
+            border: none;
+            color: white;
+            font-weight: 800;
+            font-size: 0.9rem;
+            padding: 12px 16px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+            margin-top: auto;
+            font-family: inherit;
+            box-shadow: 0 5px 15px rgba(156, 39, 176, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .get-now-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(115deg, rgba(255,255,255,0) 30%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 70%);
+            transform: rotate(25deg);
+            transition: left 0.6s;
+        }
+
+        .get-now-btn:hover::after {
+            left: 120%;
+        }
+
+        .get-now-btn:hover {
+            background: linear-gradient(135deg, #B341FF, #CE6AFF);
+            transform: scale(1.02);
+        }
+
+        .get-now-btn.loading {
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: linear-gradient(145deg, #121214, #0a0a0c);
+            border-radius: 32px;
+            max-width: 90vw;
+            max-height: 90vh;
+            width: auto;
+            border: 2px solid #9C27B0;
+            overflow: hidden;
+            animation: slideUp 0.3s;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-image {
+            width: 100%;
+            height: auto;
+            max-height: 70vh;
+            object-fit: contain;
+            background: #000;
+        }
+
+        .modal-info {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .modal-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .modal-close {
+            background: linear-gradient(135deg, #9C27B0, #BA68C8);
+            border: none;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 40px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .modal-close:hover {
+            background: linear-gradient(135deg, #B341FF, #CE93D8);
+            transform: scale(1.02);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 35px 20px 30px;
+            border-top: 1px solid rgba(156, 39, 176, 0.4);
+            margin-top: 40px;
+            background: linear-gradient(180deg, #030305, #000000);
+            border-radius: 40px 40px 0 0;
+        }
+
+        .proof-image {
+            max-width: 280px;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1280 - 720;
+            object-fit: cover;
+            border-radius: 28px;
+            border: 2px solid #9C27B0;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .proof-image:hover {
+            transform: scale(1.02);
+            border-color: #BA68C8;
+            box-shadow: 0 0 20px rgba(156, 39, 176, 0.4);
+        }
+
+        .footer-copyright {
+            color: #6a6a7a;
+            font-size: 0.8rem;
+            margin-top: 20px;
+        }
+
+        /* Back to top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 25px;
+            background: #9C27B0;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(156, 39, 176, 0.5);
+            z-index: 100;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: #BA68C8;
+            transform: translateY(-5px);
+        }
+
+        /* Empty state */
+        .empty-state {
+            text-align: center;
+            padding: 60px;
+            background: rgba(156, 39, 176, 0.1);
+            border-radius: 40px;
+            grid-column: 1 / -1;
+        }
+
+        .empty-state p {
+            font-size: 1.1rem;
+            margin-top: 10px;
+            color: #aaa;
+        }
+
+        /* Responsividade */
+        @media (max-width: 1200px) {
+            .cards-grid { grid-template-columns: repeat(4, 1fr); gap: 22px; }
+        }
+        @media (max-width: 900px) {
+            .cards-grid { grid-template-columns: repeat(3, 1fr); }
+            .logo-text, .logo-emoji { font-size: 3rem; }
+        }
+        @media (max-width: 600px) {
+            .cards-grid { grid-template-columns: repeat(2, 1fr); }
+            .logo-text, .logo-emoji { font-size: 2.3rem; }
+            .search-box { max-width: 100%; margin: 0 15px; }
+            .search-box button { padding: 9px 24px; }
+            .search-box input { padding: 12px 8px; }
+        }
+        @media (max-width: 450px) {
+            .cards-grid { grid-template-columns: 1fr; }
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #9C27B0; border-radius: 10px; }
+    </style>
+<style>
+            .card-image { border: 2px solid #9C27B0 !important; cursor: pointer; }
+            .card-video { border: 2px solid #9C27B0 !important; }
+            .card { border: 2px solid #9C27B0 !important; }
+            .proof-image { border: 2px solid #9C27B0 !important; }
+            .logo-emoji { background: none; color: #ff6600; }
+            .get-now-btn.loading { opacity: 0.6; cursor: wait; }
+            video { background: #000; }
+            .modal-content { border: 2px solid #9C27B0 !important; }
+        </style></head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="logo">
+                <span class="logo-text">H</span>
+                <span class="logo-emoji">🔥</span>
+                <span class="logo-text">T-HUB</span>
+            </h1>
+            <p class="tagline">BUY HERE • 🔞ONLY CONTENT • DELIVER IN TELEGRAM</p>
+        </div>
+
+        <!-- Search Bar Only -->
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="🔍 Search for products...">
+                <button id="searchBtn">Search</button>
+            </div>
+        </div>
+
+        <div class="cards-grid" id="cardsGrid"><div class="card" style="--order: 0;">
+                    <div class="card-image-wrapper">
+                        <img class="card-image" src="https://files.catbox.moe/4448yl.jpg" alt="VIP CHANNEL" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    
+                    <div class="card-content">
+                        <h3 class="card-title">VIP CHANNEL</h3>
+                        <button class="get-now-btn" data-name="VIP CHANNEL">$ GET NOW $</button>
+                    </div>
+                </div><div class="card" style="--order: 1;">
+                    <div class="card-image-wrapper">
+                        <img class="card-image" src="https://files.catbox.moe/98mah7.webp" alt="LIZZY AND BROTHER" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    
+                        <div class="card-video-wrapper">
+                            <div class="card-video">
+                                <video src="https://files.catbox.moe/oendpj.mp4" controls="" preload="metadata" muted="" playsinline=""></video>
+                            </div>
+                        </div>
+                    
+                    <div class="card-content">
+                        <h3 class="card-title">LIZZY AND BROTHER</h3>
+                        <button class="get-now-btn" data-name="LIZZY AND BROTHER">$ GET NOW $</button>
+                    </div>
+                </div><div class="card" style="--order: 2;">
+                    <div class="card-image-wrapper">
+                        <img class="card-image" src="https://files.catbox.moe/oqs2du.jpg" alt="AMELIA BLONDE" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    
+                        <div class="card-video-wrapper">
+                            <div class="card-video">
+                                <video src="https://files.catbox.moe/8c2ho1.mp4" controls="" preload="metadata" muted="" playsinline=""></video>
+                            </div>
+                        </div>
+                    
+                    <div class="card-content">
+                        <h3 class="card-title">AMELIA BLONDE</h3>
+                        <button class="get-now-btn" data-name="AMELIA BLONDE">$ GET NOW $</button>
+                    </div>
+                </div><div class="card" style="--order: 3;">
+                    <div class="card-image-wrapper">
+                        <img class="card-image" src="https://files.catbox.moe/s4mq7z.jpg" alt="RAPE &amp; CP" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    
+                        <div class="card-video-wrapper">
+                            <div class="card-video">
+                                <video src="https://files.catbox.moe/7tvadq.mp4" controls="" preload="metadata" muted="" playsinline=""></video>
+                            </div>
+                        </div>
+                    
+                    <div class="card-content">
+                        <h3 class="card-title">RAPE &amp; CP</h3>
+                        <button class="get-now-btn" data-name="RAPE &amp; CP">$ GET NOW $</button>
+                    </div>
+                </div><div class="card" style="--order: 4;">
+                    <div class="card-image-wrapper">
+                        <img class="card-image" src="https://files.catbox.moe/znp3kd.webp" alt="CP 1/2" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    
+                        <div class="card-video-wrapper">
+                            <div class="card-video">
+                                <video src="https://files.catbox.moe/jqydvb.mp4" controls="" preload="metadata" muted="" playsinline=""></video>
+                            </div>
+                        </div>
+                    
+                    <div class="card-content">
+                        <h3 class="card-title">CP 1/2</h3>
+                        <button class="get-now-btn" data-name="CP 1/2">$ GET NOW $</button>
+                    </div>
+                </div><div class="card" style="--order: 5;">
+                    <div class="card-image-wrapper">
+                        <img class="card-image" src="https://files.catbox.moe/5cbrfk.webp" alt="CP 3/4" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    
+                        <div class="card-video-wrapper">
+                            <div class="card-video">
+                                <video src="https://files.catbox.moe/48qahs.mp4" controls="" preload="metadata" muted="" playsinline=""></video>
+                            </div>
+                        </div>
+                    
+                    <div class="card-content">
+                        <h3 class="card-title">CP 3/4</h3>
+                        <button class="get-now-btn" data-name="CP 3/4">$ GET NOW $</button>
+                    </div>
+                </div><div class="card" style="--order: 6;">
+                    <div class="card-image-wrapper">
+                        <img class="card-image" src="https://files.catbox.moe/cvyr4s.jpg" alt="PREMIUM CP" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    
+                        <div class="card-video-wrapper">
+                            <div class="card-video">
+                                <video src="https://files.catbox.moe/3a76l2.mp4" controls="" preload="metadata" muted="" playsinline=""></video>
+                            </div>
+                        </div>
+                    
+                    <div class="card-content">
+                        <h3 class="card-title">PREMIUM CP</h3>
+                        <button class="get-now-btn" data-name="PREMIUM CP">$ GET NOW $</button>
+                    </div>
+                </div><div class="card" style="--order: 7;">
+                    <div class="card-image-wrapper">
+                        <img class="card-image" src="https://files.catbox.moe/2udqt1.jpg" alt="UPDATE CP" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    
+                        <div class="card-video-wrapper">
+                            <div class="card-video">
+                                <video src="https://files.catbox.moe/hy1aa3.mp4" controls="" preload="metadata" muted="" playsinline=""></video>
+                            </div>
+                        </div>
+                    
+                    <div class="card-content">
+                        <h3 class="card-title">UPDATE CP</h3>
+                        <button class="get-now-btn" data-name="UPDATE CP">$ GET NOW $</button>
+                    </div>
+                </div><div class="card" style="--order: 8;">
+                    <div class="card-image-wrapper">
+                        <img class="card-image" src="https://files.catbox.moe/z0vnr7.jpg" alt="CP FATHER AND DAUGHTER" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    
+                        <div class="card-video-wrapper">
+                            <div class="card-video">
+                                <video src="https://files.catbox.moe/ihwbqz.mp4" controls="" preload="metadata" muted="" playsinline=""></video>
+                            </div>
+                        </div>
+                    
+                    <div class="card-content">
+                        <h3 class="card-title">CP FATHER AND DAUGHTER</h3>
+                        <button class="get-now-btn" data-name="CP FATHER AND DAUGHTER">$ GET NOW $</button>
+                    </div>
+                </div><div class="card" style="--order: 9;">
+                    <div class="card-image-wrapper">
+                        <img class="card-image" src="https://files.catbox.moe/zxi54j.webp" alt="ALL CP" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    
+                    <div class="card-content">
+                        <h3 class="card-title">ALL CP</h3>
+                        <button class="get-now-btn" data-name="ALL CP">$ GET NOW $</button>
+                    </div>
+                </div><div class="card" style="--order: 10;">
+                    <div class="card-image-wrapper">
+                        <img class="card-image" src="https://files.catbox.moe/podg26.jpg" alt="BIG PROMO 3 FOLDER 45$" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    
+                    <div class="card-content">
+                        <h3 class="card-title">BIG PROMO 3 FOLDER 45$</h3>
+                        <button class="get-now-btn" data-name="BIG PROMO 3 FOLDER 45$">$ GET NOW $</button>
+                    </div>
+                </div><div class="card" style="--order: 11;">
+                    <div class="card-image-wrapper">
+                        <img class="card-image" src="https://files.catbox.moe/57ola4.webp" alt="IVANKA" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    
+                        <div class="card-video-wrapper">
+                            <div class="card-video">
+                                <video src="https://files.catbox.moe/bzjmkm.mp4" controls="" preload="metadata" muted="" playsinline=""></video>
+                            </div>
+                        </div>
+                    
+                    <div class="card-content">
+                        <h3 class="card-title">IVANKA</h3>
+                        <button class="get-now-btn" data-name="IVANKA">$ GET NOW $</button>
+                    </div>
+                </div><div class="card" style="--order: 12;">
+                    <div class="card-image-wrapper">
+                        <img class="card-image" src="https://files.catbox.moe/a6do4g.webp" alt="MOM AND SON" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    
+                        <div class="card-video-wrapper">
+                            <div class="card-video">
+                                <video src="https://files.catbox.moe/xvtq65.mp4" controls="" preload="metadata" muted="" playsinline=""></video>
+                            </div>
+                        </div>
+                    
+                    <div class="card-content">
+                        <h3 class="card-title">MOM AND SON</h3>
+                        <button class="get-now-btn" data-name="MOM AND SON">$ GET NOW $</button>
+                    </div>
+                </div><div class="card" style="--order: 13;">
+                    <div class="card-image-wrapper">
+                        <img class="card-image" src="https://files.catbox.moe/3b2hje.webp" alt="IZZY" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    
+                        <div class="card-video-wrapper">
+                            <div class="card-video">
+                                <video src="https://files.catbox.moe/dv7loq.mp4" controls="" preload="metadata" muted="" playsinline=""></video>
+                            </div>
+                        </div>
+                    
+                    <div class="card-content">
+                        <h3 class="card-title">IZZY</h3>
+                        <button class="get-now-btn" data-name="IZZY">$ GET NOW $</button>
+                    </div>
+                </div><div class="card" style="--order: 14;">
+                    <div class="card-image-wrapper">
+                        <img class="card-image" src="https://files.catbox.moe/3332pr.jpg" alt="13-17 TEENS" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    
+                        <div class="card-video-wrapper">
+                            <div class="card-video">
+                                <video src="https://files.catbox.moe/sr5lpb.mp4" controls="" preload="metadata" muted="" playsinline=""></video>
+                            </div>
+                        </div>
+                    
+                    <div class="card-content">
+                        <h3 class="card-title">13-17 TEENS</h3>
+                        <button class="get-now-btn" data-name="13-17 TEENS">$ GET NOW $</button>
+                    </div>
+                </div><div class="card" style="--order: 15;">
+                    <div class="card-image-wrapper">
+                        <img class="card-image" src="https://files.catbox.moe/bs89kc.jpg" alt="ENGLISH TEEN" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    
+                        <div class="card-video-wrapper">
+                            <div class="card-video">
+                                <video src="https://files.catbox.moe/927sbu.mp4" controls="" preload="metadata" muted="" playsinline=""></video>
+                            </div>
+                        </div>
+                    
+                    <div class="card-content">
+                        <h3 class="card-title">ENGLISH TEEN</h3>
+                        <button class="get-now-btn" data-name="ENGLISH TEEN">$ GET NOW $</button>
+                    </div>
+                </div><div class="card" style="--order: 16;">
+                    <div class="card-image-wrapper">
+                        <img class="card-image" src="https://files.catbox.moe/wmdc4e.jpg" alt="HIGH SCHOOL THOTS" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    
+                        <div class="card-video-wrapper">
+                            <div class="card-video">
+                                <video src="https://files.catbox.moe/gm5647.mp4" controls="" preload="metadata" muted="" playsinline=""></video>
+                            </div>
+                        </div>
+                    
+                    <div class="card-content">
+                        <h3 class="card-title">HIGH SCHOOL THOTS</h3>
+                        <button class="get-now-btn" data-name="HIGH SCHOOL THOTS">$ GET NOW $</button>
+                    </div>
+                </div><div class="card" style="--order: 17;">
+                    <div class="card-image-wrapper">
+                        <img class="card-image" src="https://files.catbox.moe/d2m39n.jpg" alt="ALL TEEN" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    
+                    <div class="card-content">
+                        <h3 class="card-title">ALL TEEN</h3>
+                        <button class="get-now-btn" data-name="ALL TEEN">$ GET NOW $</button>
+                    </div>
+                </div><div class="card" style="--order: 18;">
+                    <div class="card-image-wrapper">
+                        <img class="card-image" src="https://files.catbox.moe/wfizot.webp" alt="SNAPGOD FULL" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    
+                        <div class="card-video-wrapper">
+                            <div class="card-video">
+                                <video src="https://files.catbox.moe/ar337t.mp4" controls="" preload="metadata" muted="" playsinline=""></video>
+                            </div>
+                        </div>
+                    
+                    <div class="card-content">
+                        <h3 class="card-title">SNAPGOD FULL</h3>
+                        <button class="get-now-btn" data-name="SNAPGOD FULL">$ GET NOW $</button>
+                    </div>
+                </div><div class="card" style="--order: 19;">
+                    <div class="card-image-wrapper">
+                        <img class="card-image" src="https://files.catbox.moe/171k24.png" alt="ALL CONTENT🔥" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    
+                    <div class="card-content">
+                        <h3 class="card-title">ALL CONTENT🔥</h3>
+                        <button class="get-now-btn" data-name="ALL CONTENT🔥">$ GET NOW $</button>
+                    </div>
+                </div></div>
+      <div class="footer">
+            <img class="proof-image" src="https://files.catbox.moe/fklkcn.jpg" alt="Proof" loading="lazy">
+            <div class="footer-copyright">
+                <p>© 2025 H🔥T-HUB | BEST SELLER -50% IN DISCOUNT</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="back-to-top" id="backToTop">↑</div>
+
+    <!-- Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <img class="modal-image" id="modalImage" src="" alt="">
+            <div class="modal-info">
+                <h3 id="modalTitle"></h3>
+                <button class="modal-close" id="modalClose">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Products - All images use 1280x720 resolution
+        // Cards 13 and 19 have only image (no video)
+        // All borders now use the same violet color (#9C27B0)
+        const products = [
+             { id: 0, name: "VIP CHANNEL", image: "https://files.catbox.moe/4448yl.jpg", video: "", hasVideo: false },
+            { id: 1, name: "LIZZY AND BROTHER", image: "https://files.catbox.moe/98mah7.webp", video: "https://files.catbox.moe/oendpj.mp4", hasVideo: true },
+            { id: 2, name: "AMELIA BLONDE", image: "https://files.catbox.moe/oqs2du.jpg", video: "https://files.catbox.moe/8c2ho1.mp4", hasVideo: true },
+            { id: 3, name: "RAPE & CP", image: "https://files.catbox.moe/s4mq7z.jpg", video: "https://files.catbox.moe/7tvadq.mp4", hasVideo: true },
+            { id: 4, name: "CP 1/2", image: "https://files.catbox.moe/znp3kd.webp", video: "https://files.catbox.moe/jqydvb.mp4", hasVideo: true },
+            { id: 5, name: "CP 3/4", image: "https://files.catbox.moe/5cbrfk.webp", video: "https://files.catbox.moe/48qahs.mp4", hasVideo: true },
+            { id: 6, name: "PREMIUM CP", image: "https://files.catbox.moe/cvyr4s.jpg",video: "https://files.catbox.moe/3a76l2.mp4", hasVideo: true },
+            { id: 7, name: "UPDATE CP", image: "https://files.catbox.moe/2udqt1.jpg", video: "https://files.catbox.moe/hy1aa3.mp4", hasVideo: true },
+            { id: 8, name: "CP FATHER AND DAUGHTER", image: "https://files.catbox.moe/z0vnr7.jpg", video: "https://files.catbox.moe/ihwbqz.mp4", hasVideo: true },
+            { id: 9, name: "ALL CP", image: "https://files.catbox.moe/zxi54j.webp", video: "", hasVideo: false },
+            { id: 9.5, name: "BIG PROMO 3 FOLDER 45$", image: "https://files.catbox.moe/podg26.jpg", video: "", hasVideo: false },
+            { id: 10, name: "IVANKA", image: "https://files.catbox.moe/57ola4.webp", video: "https://files.catbox.moe/bzjmkm.mp4", hasVideo: true },
+            { id: 11, name: "MOM AND SON", image: "https://files.catbox.moe/a6do4g.webp", video: "https://files.catbox.moe/xvtq65.mp4", hasVideo: true },
+            { id: 12, name: "IZZY", image: "https://files.catbox.moe/3b2hje.webp", video: "https://files.catbox.moe/dv7loq.mp4", hasVideo: true },
+            { id: 13, name: "13-17 TEENS", image: "https://files.catbox.moe/3332pr.jpg", video: "https://files.catbox.moe/sr5lpb.mp4", hasVideo: true  },
+            { id: 14, name: "ENGLISH TEEN", image: "https://files.catbox.moe/bs89kc.jpg", video: "https://files.catbox.moe/927sbu.mp4", hasVideo: true },
+            { id: 15, name: "HIGH SCHOOL THOTS", image: "https://files.catbox.moe/wmdc4e.jpg", video: "https://files.catbox.moe/gm5647.mp4", hasVideo: true },
+            { id: 16, name: "ALL TEEN", image: "https://files.catbox.moe/d2m39n.jpg", video: "https://www.w3schools.com/html/mov_bbb.mp4", hasVideo: false },
+            { id: 17, name: "SNAPGOD FULL", image: "https://files.catbox.moe/wfizot.webp", video: "https://files.catbox.moe/ar337t.mp4", hasVideo: true },
+            { id: 18, name: "ALL CONTENT🔥", image: "https://files.catbox.moe/171k24.png", video: "https://www.w3schools.com/html/mov_bbb.mp4", hasVideo: false },
+        ];
+
+
+        let currentSearch = "";
+
+        function sendToTelegram(productName, btnElement) {
+            const originalText = btnElement.textContent;
+            btnElement.textContent = "⏳ SENDING...";
+            btnElement.classList.add("loading");
+            
+            const message = `H🔥T-HUB\n I WANT: ${productName}`;
+            const encodedMessage = encodeURIComponent(message);
+            const telegramLink = `https://t.me/Levi_buy?text=${encodedMessage}`;
+            
+            setTimeout(() => {
+                window.open(telegramLink, "_blank");
+                btnElement.textContent = originalText;
+                btnElement.classList.remove("loading");
+            }, 200);
+        }
+
+        function openModal(product) {
+            document.getElementById('modalImage').src = product.image;
+            document.getElementById('modalTitle').textContent = product.name;
+            document.getElementById('productModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('productModal').classList.remove('active');
+        }
+
+        function renderCards() {
+            const grid = document.getElementById('cardsGrid');
+            grid.innerHTML = '';
+            
+            const filtered = products.filter(p => {
+                return p.name.toLowerCase().includes(currentSearch.toLowerCase());
+            });
+            
+            if (filtered.length === 0) {
+                grid.innerHTML = '<div class="empty-state">🔍 No products found<br><p>Try a different search term</p></div>';
+                return;
+            }
+            
+            filtered.forEach((product, idx) => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.style.setProperty('--order', idx);
+                
+                let videoHtml = '';
+                if (product.hasVideo && product.video) {
+                    videoHtml = `
+                        <div class="card-video-wrapper">
+                            <div class="card-video">
+                                <video src="${product.video}" controls preload="metadata" muted playsinline></video>
+                            </div>
+                        </div>
+                    `;
+                }
+                
+                card.innerHTML = `
+                    <div class="card-image-wrapper">
+                        <img class="card-image" src="${product.image}" alt="${product.name}" loading="lazy">
+                    </div>
+                    ${videoHtml}
+                    <div class="card-content">
+                        <h3 class="card-title">${product.name}</h3>
+                        <button class="get-now-btn" data-name="${product.name}">$ GET NOW $</button>
+                    </div>
+                `;
+                
+                const btn = card.querySelector('.get-now-btn');
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    sendToTelegram(product.name, btn);
+                });
+                
+                const imgElement = card.querySelector('.card-image');
+                imgElement.addEventListener('click', () => openModal(product));
+                imgElement.style.cursor = 'pointer';
+                
+                grid.appendChild(card);
+            });
+        }
+
+        function filterAndRender() {
+            renderCards();
+        }
+
+        // Event listeners
+        document.getElementById('searchBtn').addEventListener('click', () => {
+            currentSearch = document.getElementById('searchInput').value;
+            filterAndRender();
+        });
+        
+        document.getElementById('searchInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                currentSearch = e.target.value;
+                filterAndRender();
+            }
+        });
+        
+        document.getElementById('modalClose').addEventListener('click', closeModal);
+        document.getElementById('productModal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('productModal')) closeModal();
+        });
+        
+        // Back to top
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) backToTop.classList.add('show');
+            else backToTop.classList.remove('show');
+        });
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCards();
+        });
+        
+        // Additional styles to ensure uniform violet borders
+        const style = document.createElement('style');
+        style.textContent = `
+            .card-image { border: 2px solid #9C27B0 !important; cursor: pointer; }
+            .card-video { border: 2px solid #9C27B0 !important; }
+            .card { border: 2px solid #9C27B0 !important; }
+            .proof-image { border: 2px solid #9C27B0 !important; }
+            .logo-emoji { background: none; color: #ff6600; }
+            .get-now-btn.loading { opacity: 0.6; cursor: wait; }
+            video { background: #000; }
+            .modal-content { border: 2px solid #9C27B0 !important; }
+        `;
+        document.head.appendChild(style);
+    </script>
+
+
+```</body></html>
